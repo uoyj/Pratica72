@@ -22,5 +22,12 @@ public class Pratica72 {
         ContadorPalavras CP = new ContadorPalavras(fr);
         
         HashMap<String, Integer> map = CP.getPalavras();
+        
+        String format = "%-20s %-20s";
+        System.out.println(String.format(format, "Palavra", "Conta"));
+        for (String s: map.keySet()) {
+            Integer i = map.get(s);
+            System.out.println(String.format(format, s, i));
+        }       
     }
 }
