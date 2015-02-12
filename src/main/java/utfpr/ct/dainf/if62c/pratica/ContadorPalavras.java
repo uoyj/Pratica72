@@ -29,12 +29,18 @@ public class ContadorPalavras {
         line = reader.readLine();
         while(line!=null)
         {
-            String []trecho = line.split(" ");
+            line = line.replace(".", " ").replace("?", " ").replace("!"
+                    , " ").replace(";", " ").replace(","," ").replace("\n",
+                    " ").replace("\t", " ");
+            String []trecho = line.trim().split(" ");
             for(String s: trecho)
             {
-                if(map.containsKey(s))
-                    map.put(s, map.get(s)+ 1);
-                else map.put(s, 1);
+                if(!s.equals(""))
+                {
+                    if(map.containsKey(s))
+                        map.put(s, map.get(s)+ 1);
+                    else map.put(s, 1);
+                }
             }
             line = reader.readLine();
         }

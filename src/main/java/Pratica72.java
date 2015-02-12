@@ -17,11 +17,13 @@ import utfpr.ct.dainf.if62c.pratica.ContadorPalavras;
 public class Pratica72 {
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
-        String end = "C:/Documents and Settings/Jhonatan/Desktop/teste.txt";
+        
+        String end = "C:\\Documents and Settings\\Jhonatan\\Desktop\\teste.txt";
         FileReader fr = new FileReader(end);
         ContadorPalavras CP = new ContadorPalavras(fr);
         
         HashMap<String, Integer> map = CP.getPalavras();
+        
         
         String format = "%-20s %-20s";
         System.out.println(String.format(format, "Palavra", "Conta"));
