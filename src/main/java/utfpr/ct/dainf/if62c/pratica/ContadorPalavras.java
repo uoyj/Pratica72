@@ -16,8 +16,8 @@ import java.util.HashMap;
  */
 public class ContadorPalavras {
     
-    private BufferedReader reader;
-    private HashMap<String, Integer> map = new HashMap<>();
+    private final BufferedReader reader;
+    private final HashMap<String, Integer> map = new HashMap<>();
     private String line;
     
     public ContadorPalavras(FileReader in) {

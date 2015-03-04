@@ -1,8 +1,7 @@
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
 import utfpr.ct.dainf.if62c.pratica.ContadorPalavras;
 
 /*
@@ -19,11 +18,10 @@ public class Pratica72 {
     {
         
         String end = "C:\\Documents and Settings\\Jhonatan\\Desktop\\teste.txt";
-        FileReader fr = new FileReader(end);
-        ContadorPalavras CP = new ContadorPalavras(fr);
+        ContadorPalavras CP = new ContadorPalavras(new java.io.FileReader(end));
         
-        HashMap<String, Integer> map = CP.getPalavras();
-        
+        Map<String, Integer> map = CP.getPalavras();
+        map = new java.util.TreeMap<>(map);
         
         String format = "%-20s %-20s";
         System.out.println(String.format(format, "Palavra", "Conta"));
