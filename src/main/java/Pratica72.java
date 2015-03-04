@@ -1,4 +1,5 @@
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
@@ -19,15 +20,24 @@ public class Pratica72 {
         
         String end = "C:\\Documents and Settings\\Jhonatan\\Desktop\\teste.txt";
         ContadorPalavras CP = new ContadorPalavras(end);
+        BufferedWriter bw = new BufferedWriter(new java.io.FileWriter(end+".out"));
         
         Map<String, Integer> map = CP.getPalavras();
         map = new java.util.TreeMap<>(map);
         
-        String format = "%-20s %-20s";
+        for (String s: map.keySet()) {
+            Integer i = map.get(s);
+            bw.write(s + " " + i);
+            bw.newLine();
+        }
+        
+        /*String format = "%-20s %-20s";
         System.out.println(String.format(format, "Palavra", "Conta"));
         for (String s: map.keySet()) {
             Integer i = map.get(s);
             System.out.println(String.format(format, s, i));
-        }       
+        }*/
+        
+        bw.close();
     }
 }
