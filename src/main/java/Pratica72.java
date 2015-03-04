@@ -20,7 +20,7 @@ public class Pratica72 {
         
         String end = "C:\\Documents and Settings\\Jhonatan\\Desktop\\teste.txt";
         ContadorPalavras CP = new ContadorPalavras(end);
-        BufferedWriter bw = new BufferedWriter(new java.io.FileWriter(CP.getEnd()+".out"));
+        BufferedWriter bw = new BufferedWriter(new java.io.FileWriter(end+".out"));
         
         Map<String, Integer> map = CP.getPalavras();
         map = new java.util.TreeMap<>(map);
