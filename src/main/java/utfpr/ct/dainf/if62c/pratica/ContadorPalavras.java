@@ -6,6 +6,7 @@
 package utfpr.ct.dainf.if62c.pratica;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -20,8 +21,8 @@ public class ContadorPalavras {
     private final HashMap<String, Integer> map = new HashMap<>();
     private String line;
     
-    public ContadorPalavras(FileReader in) {
-        reader = new BufferedReader(in);
+    public ContadorPalavras(String in) throws FileNotFoundException {
+        reader = new BufferedReader(new FileReader(in));
     }
     
     public HashMap<String, Integer> getPalavras() throws IOException

@@ -18,7 +18,7 @@ public class Pratica72 {
     {
         
         String end = "C:\\Documents and Settings\\Jhonatan\\Desktop\\teste.txt";
-        ContadorPalavras CP = new ContadorPalavras(new java.io.FileReader(end));
+        ContadorPalavras CP = new ContadorPalavras(end);
         
         Map<String, Integer> map = CP.getPalavras();
         map = new java.util.TreeMap<>(map);
